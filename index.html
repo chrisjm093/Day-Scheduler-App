@@ -31,103 +31,103 @@
    
     <div class="container">
       
-      <div id = "time-900" class="row time-block">
+      <div id = "9-time" class="row time-block">
        
         <div class = "col hour">
             9AM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-9" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button data-hour= "9" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1000" class="row time-block">
+      <div id = "10-time" class="row time-block">
        
         <div class = "col hour">
             10AM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-10" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "10" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1100" class="row time-block">
+      <div id = "11-time" class="row time-block">
        
         <div class = "col hour">
             11AM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-11" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "11" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1200" class="row time-block">
+      <div id = "12-time" class="row time-block">
        
         <div class = "col hour">
             12PM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-12" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "12" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1300" class="row time-block">
+      <div id = "13-time" class="row time-block">
        
         <div class = "col hour">
             1PM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-13" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "13" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1400" class="row time-block">
+      <div id = "14-time" class="row time-block">
        
         <div class = "col hour">
             2PM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-14" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "14" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1500" class="row time-block">
+      <div id = "15-time" class="row time-block">
        
         <div class = "col hour">
             3PM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-15" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "15" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1600" class="row time-block">
+      <div id = "16-time" class="row time-block">
        
         <div class = "col hour">
             4PM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-16" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "16" class="btn saveBtn col far fa-save"></button>
         
       </div>
-      <div id = "time-1700" class="row time-block">
+      <div id = "17-time" class="row time-block">
        
         <div class = "col hour">
             5PM
         </div>
        
-        <textarea class = "col-10 content"></textarea>
+        <textarea class = "col-10 content" id = "task-17" ></textarea>
         
-        <button class="btn saveBtn col far fa-save"></button>
+        <button  data-hour= "17" class="btn saveBtn col far fa-save"></button>
         
       </div>
       
@@ -136,54 +136,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     
-    <script>
-      var currentDay = moment().format('dddd MMMM Do YYYY' );
-
-
-      $("#currentDay").append('<text>' + currentDay + '</text>' );
-
-      
-    </script>
+    <script src="script.js"></script>>
+    
   </body>
 </html>
 
-<!--....................pseudocode............................
-  major task #1: Build HTML for the calendar
-  !*create HTML structure    
-  !*create styles 
-
-  Major task #2: Print the current date to the top of the page
-    *Get the current time and format it. (use moment,js- https://momentjs.com/ - Look at the .format() function)
-
-  major task # 3: Need a way to save tasks for each hour
-      *Add a click event to save buttons to capture the action
-      *Save the task content into local storage
-      *When the page loads, load saved tasks from localStorage and assign the values into the correct hourly task inputs
-
-
-  major task #4: Get the current hour of the day and compare with the hour blocks on the page
-    * Getting the current hour ( Use moment.js - https://momentjs.com/ ) 
-    * determine if each hour block is past present or future.
-
-  major task #4: print the current date to the top of the page.
-    get the current date and format it in a way that displays in a way that is visually appealing.
-      get all hour blocks hourBlocks = $*('.hour-block') assing them a class like hour-block.
-        
-        
-    Select all the elements with the "hour-block" class and loop over each one using the .each( callback ) jQuery method
-$('.hour-block').each(function() {
-​
-    /**
-     * The "this" key word here refers to the "plain javascript object" referencing the current .hour-block element.
-     * We pass it back into jQuery here by doing $(this) so can use jQuery methods to interact with the element.
-     * Example: hourBlock.addClass('present');
-     */
-    var hourBlock = $(this);
-​
-    // Read an attribute from the element to determine the hour it's supposed to represent
-​
-    // Compare the block's hour to the current hour to determine whether it should be styled as a "past", "present" or "future" hour block
-
-    *formats date, time information link is on line 36 add my script after 36
-
--->
