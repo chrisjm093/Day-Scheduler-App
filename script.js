@@ -25,8 +25,7 @@ saveBtns.each(function() {
 //change color of textareas based on time
 $(".content").each(function(){
     var timeBlock = $(this).attr("name");
-    console.log(timeBlock)
-    console.log(currentTime)
+    
     if( timeBlock == currentTime) {
         $(this).addClass("present");
     }
