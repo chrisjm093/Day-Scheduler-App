@@ -1,5 +1,5 @@
 var currentDay = moment().format('dddd MMMM Do YYYY' );
-var currentTime = moment().format('HH');
+var currentTime = moment().hour();
 var hourBlock = $(this);
 var content = document.querySelector('.content');
 var saveBtns = $('.saveBtn');
@@ -25,7 +25,8 @@ saveBtns.each(function() {
 //change color of textareas based on time
 $(".content").each(function(){
     var timeBlock = $(this).attr("name");
-
+    console.log(timeBlock)
+    console.log(currentTime)
     if( timeBlock == currentTime) {
         $(this).addClass("present");
     }
